@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://github.com/AmayaHena/UWU/blob/master/images/logo_UWU.png" width="550">
+</p>
+
 ## DescriptiOWOn
 A try to UwU code.
 
