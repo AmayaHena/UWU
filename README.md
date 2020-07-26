@@ -2,10 +2,16 @@
     <img src="https://github.com/AmayaHena/UWU/blob/master/images/logo_UWU.png" width="550">
 </p>
 
+## WARNING
+Please if you want to see a serious project for code quality, don't look to this one... ;_;
+
 ## Status
 Work in progress.
 
+Keys & Args : Parsed
+
 ## DescriptiOWOn
+
 UWU is a try to make an exotic programming language
 
 It's more accurate to say that's a reinterpreter in C.
