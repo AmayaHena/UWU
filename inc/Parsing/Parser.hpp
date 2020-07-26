@@ -22,7 +22,7 @@ namespace Parsing {
 
         private:
 
-            std::vector<std::string> split(const std::string &s, const char delimiter) const;
+            std::vector<std::string> split(const std::string &s, const char delimiter = ' ') const;
 
     };
 
