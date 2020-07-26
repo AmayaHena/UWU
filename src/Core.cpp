@@ -15,8 +15,20 @@ bool Core::run(const std::string &s)
     || !keysCheck())
         return false;
 
-    std::cout << "---" << std::endl;
-    std::cout << "END POINT" << std::endl;
+    /* DEBUG */
+    for (std::string f : _f.getContent()) {
+        if (!_p.getKey(f).empty()) {
+            for (std::string s : _p.getKey(f)) {
+                std::cout << s << " | ";
+            }
+            std::cout << std::endl;
+            if (_p.getError())
+                return 84;
+        }
+    }
+    /* DEBUG */
+
+    std::cout << "\033[1;32mCompilation complete! UWU\033[0m" << std::endl;
     return true;
 }
 

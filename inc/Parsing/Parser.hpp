@@ -25,6 +25,8 @@ namespace Parsing {
             bool loadKeys();
             std::vector<std::string> getKey(const std::string &s);
 
+            inline bool getError() const { return _error; }
+
         private:
 
             std::vector<std::string> split(const std::string &s, const char delimiter = ' ') const;
@@ -33,6 +35,8 @@ namespace Parsing {
 
             File _f;
             std::vector<std::pair<std::string, std::string>> _contKey;
+
+            bool _error;
 
     };
 

@@ -66,9 +66,24 @@ namespace Parsing {
         if (s.empty())
             return v;
         v = split(s);
-        if (v.empty())
+        if (v.empty()) {
             v.clear();
+            return v;
+        }
 
+        for (std::pair<std::string, std::string> p : _contKey) {
+            if (p.first == v[0]) {
+                if (std::stoi(p.second) == static_cast<int>(v.size()) - 1) {
+                    return v;
+                } else {
+                    std::cerr << "\033[1;31mERROR: bad number of arguments! è_é\033[0m" << std::endl;
+                    std::cerr << s << std::endl;
+                    _error = true;
+                    break;
+                }
+            }
+        }
+        v.clear();
         return v;
     }
 
