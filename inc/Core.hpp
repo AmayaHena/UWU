@@ -23,6 +23,8 @@ class Core {
 
     private:
 
+        void setup();
+
         bool fileCheck(const std::string &s);
         bool dataCheck();
 

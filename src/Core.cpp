@@ -9,12 +9,21 @@
 
 bool Core::run(const std::string &s)
 {
+    setup();
     if (!fileCheck(s)
     || !dataCheck())
         return false;
 
     std::cout << s << std::endl;
     return true;
+}
+
+void Core::setup()
+{
+    if (!_f.setPath("rsrc/amaya_header.txt"))
+        return;
+    for (const std::string &s : _f.getContent())
+        std::cout << s << std::endl;
 }
 
 bool Core::fileCheck(const std::string &s)
@@ -38,7 +47,7 @@ bool Core::dataCheck()
 
 bool Core::error(const std::string &s) const
 {
-    std::cerr << s << std::endl;
+    std::cerr << "\033[1;31m" << s << "\033[0m" << std::endl;
     return false;
 }
 
