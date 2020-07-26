@@ -11,10 +11,12 @@ bool Core::run(const std::string &s)
 {
     setup();
     if (!fileCheck(s)
-    || !dataCheck())
+    || !dataCheck()
+    || !keysCheck())
         return false;
 
-    std::cout << s << std::endl;
+    std::cout << "---" << std::endl;
+    std::cout << "END POINT" << std::endl;
     return true;
 }
 
@@ -44,9 +46,16 @@ bool Core::dataCheck()
     return true;
 }
 
+bool Core::keysCheck()
+{
+    if (!_p.loadKeys())
+        return error("Missing keyword lists in rsrc! è_é");
+    return true;
+}
 
 bool Core::error(const std::string &s) const
 {
+    std::cerr << "\033[1;31mI recommand you to reclone the repo if you're missing ressources (rsrc)!\033[0m" << std::endl;
     std::cerr << "\033[1;31m" << s << "\033[0m" << std::endl;
     return false;
 }

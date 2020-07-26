@@ -10,19 +10,29 @@
 #include <iostream>
 #include <vector>
 
+#include "File.hpp"
+
 namespace Parsing {
     class Parser {
 
         public:
 
-            Parser() = default;
+            Parser();
             ~Parser() = default;
 
             bool checkHeaders(const std::vector<std::string> &v);
 
+            bool loadKeys();
+            std::vector<std::string> getKey(const std::string &s);
+
         private:
 
             std::vector<std::string> split(const std::string &s, const char delimiter = ' ') const;
+
+        private:
+
+            File _f;
+            std::vector<std::pair<std::string, std::string>> _contKey;
 
     };
 

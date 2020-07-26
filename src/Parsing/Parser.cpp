@@ -13,6 +13,10 @@
 
 namespace Parsing {
 
+    /* CTOR & DTOR */
+
+    Parser::Parser() { _f.setPath("rsrc/keyword_list.txt"); }
+
     /* PUBLIC METHODS */
 
     bool Parser::checkHeaders(const std::vector<std::string> &v)
@@ -38,6 +42,34 @@ namespace Parsing {
             if (file[f_it--] != v[v_it--])
                 return false;
         return true;
+    }
+
+    bool Parser::loadKeys()
+    {
+        if (!_f.isFile())
+            return false;
+
+        for (std::string &s : _f.getContent()) {
+            std::vector<std::string> tmp = split(s);
+
+            if (s.size() < 2)
+                return false;
+            _contKey.push_back(std::make_pair(tmp[0], tmp[1]));
+        }
+        return true;
+    }
+
+    std::vector<std::string> Parser::getKey(const std::string &s)
+    {
+        std::vector<std::string> v;
+
+        if (s.empty())
+            return v;
+        v = split(s);
+        if (v.empty())
+            v.clear();
+
+        return v;
     }
 
     /* PRIVATE METHODS */

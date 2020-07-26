@@ -27,6 +27,7 @@ class Core {
 
         bool fileCheck(const std::string &s);
         bool dataCheck();
+        bool keysCheck();
 
         bool error(const std::string &s) const;
 
