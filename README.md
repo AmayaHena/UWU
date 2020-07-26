@@ -26,5 +26,5 @@ If needed a cute script to clean the files generated after a build:
 #!/bin/bash
 
 rm -rf build/
-rm -rf libNyx.so
+rm -rf UWU
 ```
