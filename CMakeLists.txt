@@ -6,15 +6,15 @@ set(SRCS
     src/main.cpp
     src/Core.cpp
 
-    src/Parsing/Parser.cpp
     src/Parsing/File.cpp
+    src/Parsing/Parser.cpp
     )
 
 set(HEADERS
     inc/Core.hpp
 
-    inc/Parsing/Parser.hpp
     inc/Parsing/File.hpp
+    inc/Parsing/Parser.hpp
     )
 
 add_executable(UWU ${SRCS} ${HEADERS})
