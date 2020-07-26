@@ -10,6 +10,7 @@
 #include <iostream>
 
 #include "File.hpp"
+#include "Parser.hpp"
 
 class Core {
 
@@ -22,6 +23,14 @@ class Core {
 
     private:
 
+        bool fileCheck(const std::string &s);
+        bool dataCheck();
+
+        bool error(const std::string &s) const;
+
+    private:
+
         Parsing::File _f;
+        Parsing::Parser _p;
 
 };
