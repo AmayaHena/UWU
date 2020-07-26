@@ -2,8 +2,13 @@
     <img src="https://github.com/AmayaHena/UWU/blob/master/images/logo_UWU.png" width="550">
 </p>
 
+## Status
+Work in progress.
+
 ## DescriptiOWOn
-A try to UwU code.
+UWU is a try to make an exotic programming language
+
+It's more accurate to say that's a reinterpreter in C.
 
 WOwOrking on linux only.
 
