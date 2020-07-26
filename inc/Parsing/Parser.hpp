@@ -7,11 +7,21 @@
 
 #pragma once
 
-class Parser {
+#include <iostream>
+#include <vector>
 
-    public:
+namespace Parsing {
+    class Parser {
 
-        Parser() = default;
-        ~Parser() = default;
+        public:
 
-};
+            Parser() = default;
+            ~Parser() = default;
+
+        private:
+
+            std::vector<std::string> split(const std::string &s, const char delimiter) const;
+
+    };
+
+}
