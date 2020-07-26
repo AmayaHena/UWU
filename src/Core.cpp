@@ -9,7 +9,11 @@
 
 bool Core::run(const std::string &s)
 {
-    (void)s;
+    if (!_f.setPath(s)
+    || _f.getExtension() != "UWU")
+        return false;
+
+    std::cout << s << std::endl;
 
     return true;
 }

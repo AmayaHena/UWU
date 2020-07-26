@@ -7,12 +7,17 @@
 
 #include <iostream>
 
+#include "Core.hpp"
+
 int main(int ac, char **av)
 {
     if (ac != 2)
         return 84;
 
-    std::string s(av[0]);
+    Core c;
+
+    if (!c.run(av[1]))
+        return 84;
 
     return 0;
 }

@@ -9,6 +9,8 @@
 
 #include <iostream>
 
+#include "File.hpp"
+
 class Core {
 
     public:
@@ -17,5 +19,9 @@ class Core {
         ~Core() = default;
 
         bool run(const std::string &s);
+
+    private:
+
+        Parsing::File _f;
 
 };
