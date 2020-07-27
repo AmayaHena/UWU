@@ -5,6 +5,8 @@
 ## WARNING
 Please if you want to see a serious project for code quality, don't look to this one... ;_;
 
+Well at the base, this project was only a joke... '-'
+
 ## Status
 Work in progress.
 
