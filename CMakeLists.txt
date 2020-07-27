@@ -8,6 +8,8 @@ set(SRCS
 
     src/Parsing/File.cpp
     src/Parsing/Parser.cpp
+
+    src/Process/Writter.cpp
     )
 
 set(HEADERS
@@ -15,10 +17,13 @@ set(HEADERS
 
     inc/Parsing/File.hpp
     inc/Parsing/Parser.hpp
+
+    inc/Process/Writter.hpp
     )
 
 add_executable(UWU ${SRCS} ${HEADERS})
 target_include_directories(UWU PUBLIC
     inc/
     inc/Parsing/
-)
+    inc/Process/
+    )
