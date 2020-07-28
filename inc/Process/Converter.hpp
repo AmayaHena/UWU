@@ -7,18 +7,28 @@
 
 #pragma once
 
+    #include <iostream>
+    #include <vector>
+
+    #include "File.hpp"
+
 namespace Process {
 
     class Converter final {
 
         public:
 
-            Converter() = default;
+            Converter();
             ~Converter() = default;
 
+            std::string convert();
+
         private:
 
         private:
+
+            std::vector<std::string> _contVar;
+            std::vector<std::string> _contC;
 
     };
 

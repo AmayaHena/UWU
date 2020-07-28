@@ -9,4 +9,16 @@
 
 namespace Process {
 
+    /* CTOR & DTOR */
+
+    Converter::Converter()
+    {
+
+    }
+
+
+    /* PUBLIC METHODS */
+
+    /* PRIVATE METHODS */
+
 }
