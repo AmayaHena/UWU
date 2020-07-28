@@ -61,7 +61,7 @@ bool Core::dataCheck()
 bool Core::keysCheck()
 {
     if (!_p.loadKeys())
-        return error("Missing keyword lists in rsrc!", true);
+        return error("Missing keyword_lists.txt in rsrc!", true);
     return true;
 }
 
