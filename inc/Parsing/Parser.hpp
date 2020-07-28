@@ -13,7 +13,7 @@
 #include "File.hpp"
 
 namespace Parsing {
-    class Parser {
+    class Parser final {
 
         public:
 

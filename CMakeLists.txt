@@ -9,7 +9,7 @@ set(SRCS
     src/Parsing/File.cpp
     src/Parsing/Parser.cpp
 
-    src/Process/Writter.cpp
+    src/Process/Converter.cpp
     )
 
 set(HEADERS
@@ -18,7 +18,7 @@ set(HEADERS
     inc/Parsing/File.hpp
     inc/Parsing/Parser.hpp
 
-    inc/Process/Writter.hpp
+    inc/Process/Converter.hpp
     )
 
 add_executable(UWU ${SRCS} ${HEADERS})

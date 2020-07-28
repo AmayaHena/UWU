@@ -12,7 +12,7 @@
 #include "File.hpp"
 #include "Parser.hpp"
 
-class Core {
+class Core final {
 
     public:
 
