@@ -43,10 +43,10 @@ void Core::setup()
 bool Core::fileCheck(const std::string &s)
 {
     if (!_f.setPath(s))
-        return error("There is NOWO file! è_é");;
+        return error("There is NOWO file!");
 
     if (_f.getExtension() != "UWU")
-        return error("This not a UWU file! è_é");;
+        return error("This not a UWU file!");
 
     return true;
 }
@@ -61,14 +61,14 @@ bool Core::dataCheck()
 bool Core::keysCheck()
 {
     if (!_p.loadKeys())
-        return error("Missing keyword lists in rsrc! è_é");
+        return error("Missing keyword lists in rsrc!");
     return true;
 }
 
 bool Core::error(const std::string &s) const
 {
     std::cerr << "\033[1;31mI recommand you to reclone the repo if you're missing ressources (rsrc)!\033[0m" << std::endl;
-    std::cerr << "\033[1;31m" << s << "\033[0m" << std::endl;
+    std::cerr << "\033[1;31m" << s << " è_é\033[0m" << std::endl;
     return false;
 }
 
