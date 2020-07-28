@@ -29,7 +29,7 @@ class Core {
         bool dataCheck();
         bool keysCheck();
 
-        bool error(const std::string &s) const;
+        bool error(const std::string &s, bool b = false) const;
 
     private:
 

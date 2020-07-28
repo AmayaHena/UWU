@@ -61,13 +61,14 @@ bool Core::dataCheck()
 bool Core::keysCheck()
 {
     if (!_p.loadKeys())
-        return error("Missing keyword lists in rsrc!");
+        return error("Missing keyword lists in rsrc!", true);
     return true;
 }
 
-bool Core::error(const std::string &s) const
+bool Core::error(const std::string &s, bool b) const
 {
-    std::cerr << "\033[1;31mI recommand you to reclone the repo if you're missing ressources (rsrc)!\033[0m" << std::endl;
+    if (b)
+        std::cerr << "\033[1;31mReclone the repo is recommended if you're missing ressources (rsrc)!\033[0m" << std::endl;
     std::cerr << "\033[1;31m" << s << " è_é\033[0m" << std::endl;
     return false;
 }
