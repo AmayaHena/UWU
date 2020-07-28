@@ -28,7 +28,7 @@ bool Core::run(const std::string &s)
     }
     /* DEBUG */
 
-    std::cout << "\033[1;32mCompilation complete! UWU\033[0m" << std::endl;
+    print("Compilation complete! UWU");
     return true;
 }
 
@@ -73,3 +73,7 @@ bool Core::error(const std::string &s, bool b) const
     return false;
 }
 
+inline void Core::print(const std::string &s) const
+{
+    std::cout << "\033[1;32m" << s << "\033[0m" << std::endl;
+}

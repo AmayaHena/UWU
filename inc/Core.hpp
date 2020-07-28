@@ -30,6 +30,7 @@ class Core {
         bool keysCheck();
 
         bool error(const std::string &s, bool b = false) const;
+        inline void print(const std::string &s) const;
 
     private:
 
