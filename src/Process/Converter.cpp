@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2020
+** PERSONAL PROJECT, 2020
 ** UWU
 ** File description:
 ** Converter
