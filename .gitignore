@@ -41,3 +41,4 @@ build/
 UWU
 clean.sh
 debug/
+*.c
