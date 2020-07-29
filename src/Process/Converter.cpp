@@ -15,10 +15,21 @@ namespace Process {
 
     /* PUBLIC METHODS */
 
-    bool Converter::setup()
+
+    bool Converter::convert(const std::vector<std::string> &v)
+    {
+        if (!setupBegin())
+            return false;
+
+        return setupEnd();
+    }
+
+    /* PRIVATE METHODS */
+
+    bool Converter::setupBegin()
     {
         if (!_f.setPath("rsrc/C/begin.txt"))
-            return false;
+            return error("Missing file : " + _f.getPath() + " in rsrc!");
 
         for (const std::string &s : _f.getContent())
             _contC.push_back(s);
@@ -26,12 +37,16 @@ namespace Process {
         return true;
     }
 
-    std::string Converter::convert(const std::vector<std::string> &v)
+    bool Converter::setupEnd()
     {
-        return "";
-    }
+        if (!_f.setPath("rsrc/C/end.txt"))
+            return error("Missing file : " + _f.getPath() + " in rsrc!");
 
-    /* PRIVATE METHODS */
+        for (const std::string &s : _f.getContent())
+            _contC.push_back(s);
+
+        return true;
+    }
 
     bool Converter::checkValue(const std::string &s)
     {

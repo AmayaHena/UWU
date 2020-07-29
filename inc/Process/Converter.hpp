@@ -21,12 +21,13 @@ namespace Process {
             Converter();
             ~Converter() = default;
 
-            bool setup();
-
-            std::string convert(const std::vector<std::string> &v);
+            bool convert(const std::vector<std::string> &v);
             inline bool getError() const { return _error; }
 
         private:
+
+            bool setupBegin();
+            bool setupEnd();
 
             bool checkValue(const std::string &s);
             bool isDeclared(const std::string &s);
@@ -35,8 +36,6 @@ namespace Process {
             bool isNb(const std::string &s) const;
 
             bool error(const std::string &s);
-
-        private:
 
             bool redirect(const std::vector<std::string> &v);
 
