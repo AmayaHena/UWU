@@ -7,11 +7,6 @@ Please if you want to see a serious project for code quality, don't look to this
 
 Well at the base, this project was only a joke... '-'
 
-## Status
-Work in progress.
-
-Keys & Args : Parsed
-
 ## DescriptiOWOn
 
 UWU is a try to make an exotic programming language
