@@ -33,7 +33,6 @@ namespace Process {
 
         for (const std::string &s : _f.getContent())
             _contC.push_back(s);
-
         return true;
     }
 
@@ -44,7 +43,6 @@ namespace Process {
 
         for (const std::string &s : _f.getContent())
             _contC.push_back(s);
-
         return true;
     }
 
@@ -60,7 +58,6 @@ namespace Process {
         for (const std::string &v : _contVar)
             if (s == v)
                 return true;
-
         return error("The value : " + s + " is undefined!");
     }
 
@@ -125,7 +122,6 @@ namespace Process {
                 tmp += s;
             }
         }
-
         return tmp;
     }
 
@@ -139,7 +135,6 @@ namespace Process {
             else
                 tmp += s;
         }
-
         return tmp;
     }
 
