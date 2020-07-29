@@ -5,6 +5,8 @@
 ** Core
 */
 
+#include <stdlib.h>
+
 #include "Core.hpp"
 
 bool Core::run(const std::string &s)
@@ -14,19 +16,6 @@ bool Core::run(const std::string &s)
     || !dataCheck()
     || !keysCheck())
         return false;
-
-    /* DEBUG */
-    /* for (std::string f : _f.getContent()) {
-        if (!_p.getKey(f).empty()) {
-            for (std::string s : _p.getKey(f)) {
-                std::cout << s << " | ";
-            }
-            std::cout << std::endl;
-            if (_p.getError())
-                return false;
-        }
-    } */
-    /* DEBUG */
 
     Process::Converter c;
 
@@ -41,13 +30,11 @@ bool Core::run(const std::string &s)
     }
     c.setupEnd();
 
-    /* DEBUG */
-    for (std::string s : c.getContC())
-        std::cout << s << std::endl;
-    /* DEBUG */
-
+    system("rm main.c");
     _f.setPath("main.c");
     _f.create(c.getContC());
+
+    system("gcc main.c");
 
     print("Compilation complete! UWU");
     return true;
