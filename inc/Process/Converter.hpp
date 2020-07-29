@@ -39,7 +39,12 @@ namespace Process {
 
             bool error(const std::string &s);
 
+        private:
+
             bool redirect(const std::vector<std::string> &v);
+
+            std::string unslpit(const std::string &value);
+            std::string unslpit(const std::string &value);
 
             bool transcript(const std::string &LV, const std::string &RV);
             bool transcript(const std::string &value);

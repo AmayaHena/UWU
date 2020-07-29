@@ -109,13 +109,54 @@ namespace Process {
         return transcript();
     }
 
+    std::string Converter::unslpit(const std::string &LV, const std::string &RV);
+    {
+        std::string tmp;
+        bool b = false;
+
+        for (const std::string &s : _f.getContent()) {
+            if (s == " ") {
+                b = true;
+                if (b)
+                    tmp += RV;
+                else
+                    tmp += LV;
+            } else {
+                tmp += s;
+            }
+        }
+
+        return tmp;
+    }
+
+    std::string Converter::unslpit(const std::string &value)
+    {
+        std::string tmp;
+
+        for (const std::string &s : _f.getContent()) {
+            if (s == " ")
+                tmp += value;
+            else
+                tmp += s;
+        }
+
+        return tmp;
+    }
+
     bool Converter::transcript(const std::string &LV, const std::string &RV)
     {
+        if (!checkValue(LV)
+        || !checkValue(RV))
+            return false;
+
         return true;
     }
 
     bool Converter::transcript(const std::string &value)
     {
+        if (!checkValue(value))
+            return false;
+
         return true;
     }
 
