@@ -15,7 +15,6 @@ namespace Process {
 
     /* PUBLIC METHODS */
 
-
     bool Converter::convert(const std::vector<std::string> &v)
     {
         if (!setupBegin())
