@@ -43,7 +43,7 @@ namespace Process {
 
             bool redirect(const std::vector<std::string> &v);
 
-            std::string unslpit(const std::string &value);
+            std::string unslpit(const std::string &LV, const std::string &RV);
             std::string unslpit(const std::string &value);
 
             bool transcript(const std::string &LV, const std::string &RV);
