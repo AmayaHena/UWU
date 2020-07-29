@@ -111,11 +111,11 @@ namespace Process {
 
         for (const std::string &s : _f.getContent()) {
             if (s == " ") {
-                b = true;
                 if (b)
                     tmp += RV;
                 else
                     tmp += LV;
+                b = true;
             } else {
                 tmp += s;
             }
@@ -145,7 +145,7 @@ namespace Process {
         || !checkValue(RV))
             return false;
 
-        _contC.push_back(unslpit(LV, RV));
+        _contC.push_back("\t" + unslpit(LV, RV));
         return true;
     }
 
@@ -154,14 +154,14 @@ namespace Process {
         if (!checkValue(value))
             return false;
 
-        _contC.push_back(unslpit(value));
+        _contC.push_back("\t" + unslpit(value));
         return true;
     }
 
     bool Converter::transcript()
     {
         for (const std::string &s : _f.getContent())
-            _contC.push_back(s);
+            _contC.push_back("\t" + s);
         return true;
     }
 
