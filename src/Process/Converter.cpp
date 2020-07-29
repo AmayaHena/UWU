@@ -20,6 +20,8 @@ namespace Process {
         if (!setupBegin())
             return false;
 
+        if (!redirect())
+            return false;
         return setupEnd();
     }
 
@@ -143,6 +145,7 @@ namespace Process {
         || !checkValue(RV))
             return false;
 
+        _contC.push_back(unslpit(LV, RV));
         return true;
     }
 
@@ -151,6 +154,7 @@ namespace Process {
         if (!checkValue(value))
             return false;
 
+        _contC.push_back(unslpit(value));
         return true;
     }
 
