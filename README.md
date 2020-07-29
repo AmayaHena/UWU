@@ -36,3 +36,7 @@ If needed a cute script to clean the files generated after a build:
 rm -rf build/
 rm -rf UWU
 ```
+
+## Preview
+
+![](https://github.com/AmayaHena/UWU/blob/master/images/preview_UWU.png)
