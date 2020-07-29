@@ -33,41 +33,35 @@ namespace Process {
 
     /* PRIVATE METHODS */
 
-    void Converter::redirect(const std::vector<std::string> &v)
+    bool Converter::checkValue(const std::string &s)
     {
-        if (v[0] == "ADDUWU")
-            return ADDUWU(v[1], v[2]);
-        else if (v[0] == "SUBUWU")
-            return SUWUB(v[1], v[2]);
-        else if (v[0] == "MUWUL")
-            return MUWUL(v[1], v[2]);
-        else if (v[0] == "DIVIDUWU")
-            return DIVIDUWU(v[1], v[2]);
-        else if (v[0] == "MOWODULOWO")
-            return MOWODULOWO(v[1], v[2]);
-        else if (v[0] == "GIMMEEEE")
-            return GIMMEEEE(v[1], v[2]);
-        else if (v[0] == "PRINTOWO")
-            return PRINTOWO(v[1]);
-        else if (v[0] == "PRINTUWU")
-            return PRINTUWU(v[1]);
-        else if (v[0] == "CHECKUWU")
-            return CHECKUWU(v[1], v[2]);
-        else if (v[0] == "CHECKOWO")
-            return CHECKOWO(v[1], v[2]);
-        else if (v[0] == "WHILUWU")
-            return WHILUWU(v[1], v[2]);
-        else if (v[0] == "YAMETEEE")
-            return YAMETEEE();
-        else if (v[0] == "UWU")
-            return UWU();
+        if (!isChar(s)
+        && !isNb(s))
+            return error("The value : " + s + " is not handled!");
+
+        if (isNb(s))
+            return true;
+
+        for (const std::string &v : _contVar)
+            if (s == v)
+                return true;
+
+        return error("The value : " + s + " is undefined!");
+    }
+
+    bool Converter::isDeclared(const std::string &s)
+    {
+        for (const std::string &v : _contVar)
+            if (s == v)
+                return true;
+        return false;
     }
 
     bool Converter::isChar(const std::string &s) const
     {
         for (const char c : s)
-            if ((c >= 'a' && c <= 'z')
-            || (c >= 'A' && c <= 'Z'))
+            if (!((c >= 'a' && c <= 'z')
+            || (c >= 'A' && c <= 'Z')))
                 return false;
         return true;
     }
@@ -75,55 +69,33 @@ namespace Process {
     bool Converter::isNb(const std::string &s) const
     {
         for (const char c : s)
-            if (c >= '0' && c <= '9')
+            if (!(c >= '0' && c <= '9'))
                 return false;
         return true;
     }
 
+    bool Converter::error(const std::string &s)
+    {
+        std::cerr << "\033[1;31m" << s << " è_é\033[0m" << std::endl;
+        _error = true;
+        return false;
+    }
+
     /* THIS IS SHIT */
 
-    void Converter::ADDUWU(const std::string &LV, const std::string &RV) const
+    bool Converter::redirect(const std::vector<std::string> &v)
     {
-    }
+        _f.setPath("rsrc/C/" + v[0] + ".txt");
+        if (!_f.isFile())
+            return error("Missing file : " + _f.getPath() + " in rsrc!");
 
-    void Converter::SUWUB(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::MUWUL(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::DIVIDUWU(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::MOWODULOWO(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::GIMMEEEE(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::PRINTOWO(const std::string &value) const
-    {
-    }
-
-    void Converter::PRINTUWU(const std::string &value) const
-    {
-    }
-
-    void Converter::CHECKUWU(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::CHECKOWO(const std::string &LV, const std::string &RV) const
-    {
-    }
-
-    void Converter::WHILUWU(const std::string &LV, const std::string &RV) const
-    {
+        if (v.size() == 3)
+            std::cout << "2 args" << std::endl;
+        else if (v.size() == 2)
+            std::cout << "1 args" << std::endl;
+        else
+            std::cout << "0 args" << std::endl;
+        return false;
     }
 
 }

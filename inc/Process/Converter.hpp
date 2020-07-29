@@ -28,30 +28,17 @@ namespace Process {
 
         private:
 
-            void redirect(const std::vector<std::string> &v);
+            bool checkValue(const std::string &s);
+            bool isDeclared(const std::string &s);
 
             bool isChar(const std::string &s) const;
             bool isNb(const std::string &s) const;
 
+            bool error(const std::string &s);
+
         private:
 
-            void ADDUWU(const std::string &LV, const std::string &RV) const;
-            void SUWUB(const std::string &LV, const std::string &RV) const;
-            void MUWUL(const std::string &LV, const std::string &RV) const;
-            void DIVIDUWU(const std::string &LV, const std::string &RV) const;
-            void MOWODULOWO(const std::string &LV, const std::string &RV) const;
-
-            void GIMMEEEE(const std::string &LV, const std::string &RV) const;
-
-            void PRINTOWO(const std::string &value) const;
-            void PRINTUWU(const std::string &value) const;
-
-            void CHECKUWU(const std::string &LV, const std::string &RV) const;
-            void CHECKOWO(const std::string &LV, const std::string &RV) const;
-            void WHILUWU(const std::string &LV, const std::string &RV) const;
-
-            inline void YAMETEEE() { _contC.push_back( {"\treturn (84);"} ); }
-            inline void UWU() { _contC.push_back( { "\treturn (0);"} ) ; }
+            bool redirect(const std::vector<std::string> &v);
 
         private:
 
@@ -62,8 +49,9 @@ namespace Process {
 
             bool _error;
 
-            char _itOWO = 0;
-            char _itUWU = 0;
+            // INC FEATURE
+            /* char _itOWO = 0;
+            char _itUWU = 0; */
 
     };
 
