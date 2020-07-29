@@ -105,7 +105,7 @@ namespace Process {
         return transcript();
     }
 
-    std::string Converter::unslpit(const std::string &LV, const std::string &RV);
+    std::string Converter::unslpit(const std::string &LV, const std::string &RV)
     {
         std::string tmp;
         bool b = false;
