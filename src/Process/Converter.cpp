@@ -20,7 +20,7 @@ namespace Process {
         if (!setupBegin())
             return false;
 
-        if (!redirect())
+        if (!redirect(v))
             return false;
         return setupEnd();
     }
