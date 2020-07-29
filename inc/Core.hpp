@@ -11,6 +11,7 @@
 
 #include "File.hpp"
 #include "Parser.hpp"
+#include "Converter.hpp"
 
 class Core final {
 

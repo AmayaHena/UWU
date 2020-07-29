@@ -11,25 +11,20 @@ namespace Process {
 
     /* CTOR & DTOR */
 
-    Converter::Converter() : _error(false) {} ;
+    Converter::Converter() : _error(false) { setupBegin(); }
 
     /* PUBLIC METHODS */
 
     bool Converter::convert(const std::vector<std::string> &v)
     {
-        if (!setupBegin())
-            return false;
-
         if (!redirect(v))
             return false;
-        return setupEnd();
+        return true;
     }
 
-    /* PRIVATE METHODS */
-
-    bool Converter::setupBegin()
+    bool Converter::setupEnd()
     {
-        if (!_f.setPath("rsrc/C/begin.txt"))
+        if (!_f.setPath("rsrc/C/end.txt"))
             return error("Missing file : " + _f.getPath() + " in rsrc!");
 
         for (const std::string &s : _f.getContent())
@@ -37,9 +32,11 @@ namespace Process {
         return true;
     }
 
-    bool Converter::setupEnd()
+    /* PRIVATE METHODS */
+
+    bool Converter::setupBegin()
     {
-        if (!_f.setPath("rsrc/C/end.txt"))
+        if (!_f.setPath("rsrc/C/begin.txt"))
             return error("Missing file : " + _f.getPath() + " in rsrc!");
 
         for (const std::string &s : _f.getContent())
@@ -141,6 +138,9 @@ namespace Process {
 
     bool Converter::transcript(const std::string &LV, const std::string &RV)
     {
+        if (_f.getPath().find("GIMMEEEE") != std::string::npos)
+            _contVar.push_back(LV);
+
         if (!checkValue(LV)
         || !checkValue(RV))
             return false;

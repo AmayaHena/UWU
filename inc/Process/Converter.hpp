@@ -23,13 +23,14 @@ namespace Process {
 
             bool convert(const std::vector<std::string> &v);
 
+            bool setupEnd();
+
             inline bool getError() const { return _error; }
             inline std::vector<std::string> getContC() const { return _contC; }
 
         private:
 
             bool setupBegin();
-            bool setupEnd();
 
             bool checkValue(const std::string &s);
             bool isDeclared(const std::string &s);

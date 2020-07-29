@@ -16,16 +16,34 @@ bool Core::run(const std::string &s)
         return false;
 
     /* DEBUG */
-    for (std::string f : _f.getContent()) {
+    /* for (std::string f : _f.getContent()) {
         if (!_p.getKey(f).empty()) {
             for (std::string s : _p.getKey(f)) {
                 std::cout << s << " | ";
             }
             std::cout << std::endl;
             if (_p.getError())
-                return 84;
+                return false;
+        }
+    } */
+    /* DEBUG */
+
+    Process::Converter c;
+
+    for (std::string f : _f.getContent()) {
+        if (!_p.getKey(f).empty()) {
+            if (!c.convert(_p.getKey(f)))
+                return false;
+            if (_p.getError()
+            || c.getError())
+                return false;
         }
     }
+    c.setupEnd();
+
+    /* DEBUG */
+    /* for (std::string s : c.getContC())
+        std::cout << s << std::endl; */
     /* DEBUG */
 
     print("Compilation complete! UWU");
