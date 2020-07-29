@@ -96,8 +96,6 @@ namespace Process {
         return false;
     }
 
-    /* THIS IS SHIT */
-
     bool Converter::redirect(const std::vector<std::string> &v)
     {
         _f.setPath("rsrc/C/" + v[0] + ".txt");
@@ -105,12 +103,27 @@ namespace Process {
             return error("Missing file : " + _f.getPath() + " in rsrc!");
 
         if (v.size() == 3)
-            std::cout << "2 args" << std::endl;
+            return transcript(v[1], v[2]);
         else if (v.size() == 2)
-            std::cout << "1 args" << std::endl;
-        else
-            std::cout << "0 args" << std::endl;
-        return false;
+            return transcript(v[1]);
+        return transcript();
+    }
+
+    bool Converter::transcript(const std::string &LV, const std::string &RV)
+    {
+        return true;
+    }
+
+    bool Converter::transcript(const std::string &value)
+    {
+        return true;
+    }
+
+    bool Converter::transcript()
+    {
+        for (const std::string &s : _f.getContent())
+            _contC.push_back(s);
+        return true;
     }
 
 }

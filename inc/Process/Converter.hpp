@@ -22,7 +22,9 @@ namespace Process {
             ~Converter() = default;
 
             bool convert(const std::vector<std::string> &v);
+
             inline bool getError() const { return _error; }
+            inline std::vector<std::string> getContC() const { return _contC; }
 
         private:
 
@@ -39,6 +41,10 @@ namespace Process {
 
             bool redirect(const std::vector<std::string> &v);
 
+            bool transcript(const std::string &LV, const std::string &RV);
+            bool transcript(const std::string &value);
+            bool transcript();
+
         private:
 
             std::vector<std::string> _contVar;
@@ -47,10 +53,6 @@ namespace Process {
             Parsing::File _f;
 
             bool _error;
-
-            // INC FEATURE
-            /* char _itOWO = 0;
-            char _itUWU = 0; */
 
     };
 
