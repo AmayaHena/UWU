@@ -42,9 +42,12 @@ bool Core::run(const std::string &s)
     c.setupEnd();
 
     /* DEBUG */
-    /* for (std::string s : c.getContC())
-        std::cout << s << std::endl; */
+    for (std::string s : c.getContC())
+        std::cout << s << std::endl;
     /* DEBUG */
+
+    _f.setPath("main.c");
+    _f.create(c.getContC());
 
     print("Compilation complete! UWU");
     return true;
