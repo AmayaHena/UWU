@@ -46,6 +46,8 @@ namespace Process {
 
     bool Converter::checkValue(const std::string &s)
     {
+        if (s == "UWUAC")
+            return true;
         if (!isChar(s)
         && !isNb(s))
             return error("The value : " + s + " is not handled!");
