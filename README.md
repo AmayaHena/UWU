@@ -13,7 +13,7 @@ UWU is a try to make an exotic programming language.
 
 It's more accurate to say that's a reinterpreter in C.
 
-Currently writting documentation.
+You can find some docUWUmentation in the Wiki of this repo.
 
 WOwOrking on linux only.
 
