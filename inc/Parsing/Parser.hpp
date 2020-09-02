@@ -36,7 +36,7 @@ namespace Parsing {
             File _f;
             std::vector<std::pair<std::string, std::string>> _contKey;
 
-            bool _error;
+            bool _error = false;
 
     };
 
