@@ -30,13 +30,11 @@ bool Core::run(const std::string &s)
     }
     c.setupEnd();
 
-    system("rm main.c");
     _f.setPath("main.c");
     _f.create(c.getContC());
+    system("gcc main.c && rm main.c");
 
-    system("gcc main.c");
-
-    print("Compilation complete! UWU");
+    std::cout << "\033[1;32mCompilation complete! UWU\033[0m\n";
     return true;
 }
 
@@ -79,9 +77,4 @@ bool Core::error(const std::string &s, bool b) const
         std::cerr << "\033[1;31mReclone the repo is recommended if you're missing ressources (rsrc)!\033[0m\n";
     std::cerr << "\033[1;31m" << s << " è_é\033[0m\n";
     return false;
-}
-
-inline void Core::print(const std::string &s) const
-{
-    std::cout << "\033[1;32m" << s << "\033[0m\n";
 }
