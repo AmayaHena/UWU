@@ -42,3 +42,4 @@ UWU
 clean.sh
 debug/
 *.c
+*.UWU
