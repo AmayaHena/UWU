@@ -88,7 +88,7 @@ namespace Process {
 
     bool Converter::error(const std::string &s)
     {
-        std::cerr << "\033[1;31m" << s << " è_é\033[0m" << std::endl;
+        std::cerr << "\033[1;31m" << s << " è_é\033[0m\n";
         _error = true;
         return false;
     }
