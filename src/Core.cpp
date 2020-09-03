@@ -76,12 +76,12 @@ bool Core::keysCheck()
 bool Core::error(const std::string &s, bool b) const
 {
     if (b)
-        std::cerr << "\033[1;31mReclone the repo is recommended if you're missing ressources (rsrc)!\033[0m" << std::endl;
-    std::cerr << "\033[1;31m" << s << " è_é\033[0m" << std::endl;
+        std::cerr << "\033[1;31mReclone the repo is recommended if you're missing ressources (rsrc)!\033[0m\n";
+    std::cerr << "\033[1;31m" << s << " è_é\033[0m\n";
     return false;
 }
 
 inline void Core::print(const std::string &s) const
 {
-    std::cout << "\033[1;32m" << s << "\033[0m" << std::endl;
+    std::cout << "\033[1;32m" << s << "\033[0m\n";
 }
