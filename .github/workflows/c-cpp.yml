@@ -25,6 +25,6 @@ jobs:
     - name: build
       run: ./bUwUild.sh
     - name: criterion
-      run: sudo apt-get install criterion-dev
+      run: sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get install criterion-dev
     - name: keywords
       run: cd tests/ && g++ test_crit.cpp -l criterion && mv a.out .. && cd .. && ./a.out
