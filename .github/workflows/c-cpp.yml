@@ -15,3 +15,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run: ./bUwUild.sh
+
+  keyword:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: ./bUwUild.sh
+    - name: keywords
+      run: cd tests/ && g++ test_crit.cpp -l criterion && mv a.out .. && cd .. && ./a.out
