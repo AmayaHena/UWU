@@ -8,8 +8,12 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 
-Test(int, int)
-{
+#include <cstdlib>
 
+Test(void, void)
+{
+    system("./UWU");
+
+    cr_redirect_stdout();
 }
 
